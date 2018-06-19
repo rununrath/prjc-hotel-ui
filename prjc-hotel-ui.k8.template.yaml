@@ -1,34 +1,34 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  namespace: prjd
-  name: prjd-hotel-ui
+  namespace: prjc
+  name: prjc-hotel-ui
   labels:
-    app: prjd-hotel-ui
+    app: prjc-hotel-ui
     type: jenkins-build
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: prjd-hotel-ui
+        app: prjc-hotel-ui
     spec:
       containers:
-      - name: prjd-hotel-ui
+      - name: prjc-hotel-ui
         image: <%= new_image %>
         env:
           - name: HOTELS_REST_URL
-            value: http://prjd-spring-rest:8090/example/v1/hotels
+            value: http://prjc-spring-rest:8090/example/v1/hotels
       imagePullSecrets:
       - name: admin.regkey
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: prjd
-  name: prjd-hotel-ui
+  namespace: prjc
+  name: prjc-hotel-ui
   labels:
-    app: prjd-hotel-ui
+    app: prjc-hotel-ui
 spec:
   type: NodePort
   ports:
@@ -37,4 +37,4 @@ spec:
       protocol: TCP
       name: http
   selector:
-    app: prjd-hotel-ui
+    app: prjc-hotel-ui

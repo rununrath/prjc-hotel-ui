@@ -37,7 +37,7 @@
       <configVersion>2</configVersion>
       <userRemoteConfigs>
         <hudson.plugins.git.UserRemoteConfig>
-          <url>https://github.com/rununrath/prjd-hotel-ui.gi://github.com/rununrath/prjd-hotel-ui.git</url>
+          <url>https://github.com/rununrath/prjc-hotel-ui.gi://github.com/rununrath/prjc-hotel-ui.git</url>
           <credentialsId>gitlab-aycap-password</credentialsId>
         </hudson.plugins.git.UserRemoteConfig>
       </userRemoteConfigs>
